@@ -75,8 +75,8 @@ int main()
                 sifraText[i].posun = dist(nahodneCis);
                 random.push_back(sifraText[i].posun);
                 sifraText[i].poradi += sifraText[i].posun;
-                if (sifraText[i].poradi >= ABCD) {  // >  //
-                    sifraText[i].poradi -= ABCD;
+                if (sifraText[i].poradi >= ABCD - 1) {
+                    sifraText[i].poradi -= ABCD - 1;
                 }
             }
             else
@@ -86,7 +86,7 @@ int main()
 
         cout << "\n";
         cout << "****SIFRA****\n";
-        for (int i = 0; i < mujSifraText.length(); i++) {   // < 10
+        for (int i = 0; i < mujSifraText.length(); i++) {
             zkouska[i] = abeceda.at(sifraText[i].poradi);
             cout << zkouska[i];
         }
@@ -129,7 +129,7 @@ int main()
                     pomT.poradi = abecedaTxt[i].poradi;
                     
                     if (pomT.poradi < pomT.posun) {
-                        pomT.poradi = pomT.poradi - pomT.posun + ABCD;
+                        pomT.poradi = pomT.poradi - pomT.posun + ABCD - 1;
                     }
                     else
                         pomT.poradi -= pomT.posun;
