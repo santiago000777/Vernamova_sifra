@@ -75,8 +75,11 @@ int main()
                 sifraText[i].posun = dist(nahodneCis);
                 random.push_back(sifraText[i].posun);
                 sifraText[i].poradi += sifraText[i].posun;
-                if (sifraText[i].poradi >= ABCD - 1) {  
-                    sifraText[i].poradi -= ABCD - 1;
+                if (sifraText[i].poradi > ABCD - 1) {  
+                    sifraText[i].poradi -= ABCD;
+                    if (sifraText[i].poradi < 0) {
+                        sifraText[i].poradi += ABCD;
+                    }
                 }
             }
             else
@@ -131,13 +134,14 @@ int main()
                     pomT.znak = abecedaTxt[i].znak;
                     pomT.posun = klic[j];
                     pomT.poradi = abecedaTxt[i].poradi;
-                    
+
                     if (pomT.poradi < pomT.posun) {
-                        pomT.poradi = pomT.poradi - pomT.posun + ABCD - 1;
+                        pomT.poradi = pomT.poradi - pomT.posun + ABCD;
+                        
                     }
                     else
                         pomT.poradi -= pomT.posun;
-                    
+
                     sifraText.push_back(pomT);
                 }
             }
