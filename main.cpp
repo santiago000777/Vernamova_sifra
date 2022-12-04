@@ -128,7 +128,9 @@ int main()
             cin >> pomI;
             klic.push_back(pomI);
             for (int i = 0; i < ABCD; i++) {
-
+                if (mojeSifra.at(j) == '_') {
+                    mojeSifra.at(j) = ' ';
+                }
                 if (abecedaTxt[i].znak == mojeSifra.at(j)) {
                     
                     pomT.znak = abecedaTxt[i].znak;
